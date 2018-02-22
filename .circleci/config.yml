@@ -21,7 +21,7 @@ jobs:
       - checkout
       - run: echo 'deploy'
       - run: exit 0
-      
+
 workflows:
   version: 2
   test:
@@ -31,7 +31,7 @@ workflows:
   deploy:
     jobs:
       - deploy:
-        filter:
+        filters:
           branches:
             only:
               - master
