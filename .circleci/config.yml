@@ -14,10 +14,24 @@ jobs:
       - checkout
       - run: yarn
       - run: yarn lint
-
+  deploy:
+    docker:
+      - image: circleci/node
+    steps:
+      - checkout
+      - run: echo 'deploy'
+      - run: exit 0
+      
 workflows:
   version: 2
   test:
     jobs:
       - test
       - lint
+  deploy:
+    jobs:
+      - deploy:
+        filter:
+          branches:
+            only:
+              - master
