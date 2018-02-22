@@ -1,5 +1,5 @@
-function sum(...nums){
-  return nums.reduce((a, b) => a+b)
+function sum (...nums) {
+  return nums.reduce((a, b) => a + b)
 }
 
 console.log(
